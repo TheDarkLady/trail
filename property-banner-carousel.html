@@ -9,9 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
         .main-container {
-            max-width: 1200px;
+            max-width: 100%;
             width: 100%;
-            height: 90vh;
+            height: 80vh;
             margin: 0 auto;
         }
 
@@ -32,15 +32,17 @@
         }
 
         .swiper-pagination {
-            position: relative !important;
-            top: 20px !important;
-            z-index: 0 !important;
+            position: absolute !important;
+            /* top: 20px !important; */
+            /* z-index: 0 !important; */
             display: flex;
             overflow-x: auto;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
+            scrollbar-width: none;
             scroll-behavior: smooth;
+            justify-content: flex-start;
+            align-items: center;
         }
 
         .swiper-button-next,
@@ -59,7 +61,7 @@
         }
 
         .swiper-button-next {
-            left: 96%;
+            right: 2%;
         }
 
         .swiper-button-prev {
@@ -69,8 +71,8 @@
         /* 🔹 Modal styling */
         .modal {
             display: none;
-            position: fixed;
-            z-index: 1000;
+            position: fixed !important;
+            z-index: 99999;
             left: 0;
             top: 0;
             width: 100%;
@@ -107,6 +109,29 @@
             cursor: pointer;
         }
 
+        @media only screen and (max-width:976px) and (min-width:767px){
+            .main-container{
+                height: 60vh;
+            }
+            .swiper-img{
+                height: 60vh;
+            }
+        }
+
+        @media only screen and (max-width:767px){
+            .main-container{
+                height: 40vh;
+            }
+            .swiper-img{
+                height: 40vh;
+            }
+            #imageModal .swiper-button-next{
+                right: 7%;
+            }
+            #imageModal .swiper-button-prev{
+                left: 7%;
+            }
+        }
         @media only screen and (max-width:789px) {
             .swiper-pagination-thumbnail {
                 width: 100px;
@@ -118,6 +143,21 @@
             .swiper-pagination-thumbnail {
                 width: 70px;
                 height: 50px;
+            }
+            .main-container{
+                height: 35vh;
+            }
+            .swiper-img{
+                height: 35vh;
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 20px;
+                height: 20px;
+            }
+            .swiper-button-next:after,
+            .swiper-button-prev:after{
+                font-size: 12px;
             }
         }
 
@@ -135,43 +175,51 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/Frame-1000003249.jpg"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/1Potomac16Card.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img1-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/2.Potomac16frontlow.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img2-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/3.Potomac16Leftside.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img3-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/4.Potomac16poolrender.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img4-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/livingv1.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/Frame-1000003249.jpg"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Kitchenr1.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img1-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Powder-v1.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img2-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Officev1.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img3-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbed-scaled.webp"
                         alt="" class="swiper-img">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://staging2.novelsignaturehomes.com/wp-content/uploads/2024/11/potomac1-img4-ezgif-scaled-1.webp"
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbathv1-scaled.webp"
+                        alt="" class="swiper-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbathv2-scaled.webp"
+                        alt="" class="swiper-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/herwic.webp"
                         alt="" class="swiper-img">
                 </div>
             </div>
@@ -181,140 +229,139 @@
             <div class="swiper-button-next z-20"></div>
         </div>
     </div>
-
-    <!-- 🔹 Modal Structure -->
     <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div class="swiper-button-prev z-20"></div>
-        <div class="swiper-button-next z-20"></div>
-    </div>
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="model-pagination swiper-button-prev z-20"></div>
+    <div class="model-pagination swiper-button-next z-20"></div>
+</div>
 
-    <script>
-        // 🔹 Initialize Swiper
-        const swiper = new Swiper('.swiper', {
-            autoplay: {
-                delay: 2000,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                renderBullet: function (index, className) {
-                    return `<img src="${document.querySelectorAll('.swiper-img')[index].src}" class="${className} swiper-pagination-thumbnail"/>`;
-                }
-            }
-        });
-
-        // Modal elements
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const closeBtn = document.querySelector('.close');
-        const prevBtn = modal.querySelector('.swiper-button-prev');
-        const nextBtn = modal.querySelector('.swiper-button-next');
-
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.swiper-img');
-
-        // Function to open modal and display the clicked image
-        function openModal(index) {
-            currentIndex = index;
-            modalImg.src = images[currentIndex].src;
-            modal.style.display = 'flex';
-        }
-
-        // Function to smoothly transition images
-        function slideImage(direction) {
-            // Apply initial transition styles
-            modalImg.style.transition = 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out';
-
-            if (direction === 1) {
-                // Move current image to the left
-                modalImg.style.transform = 'translateX(-100%)';
-                modalImg.style.opacity = '0';
-
-                setTimeout(() => {
-                    // Load next image and reset transition
-                    currentIndex = (currentIndex + 1) % images.length;
-                    modalImg.src = images[currentIndex].src;
-                    modalImg.style.transition = 'none'; // Reset transition to avoid flicker
-                    modalImg.style.transform = 'translateX(100%)'; // Position it to the right before sliding in
-
-                    setTimeout(() => {
-                        modalImg.style.transition = 'transform 0.4s ease-in, opacity 0.4s ease-in';
-                        modalImg.style.transform = 'translateX(0)';
-                        modalImg.style.opacity = '1';
-                    }, 50);
-                }, 400);
-            } else {
-                // Move current image to the right
-                modalImg.style.transform = 'translateX(100%)';
-                modalImg.style.opacity = '0';
-
-                setTimeout(() => {
-                    // Load previous image and reset transition
-                    currentIndex = (currentIndex - 1 + images.length) % images.length;
-                    modalImg.src = images[currentIndex].src;
-                    modalImg.style.transition = 'none';
-                    modalImg.style.transform = 'translateX(-100%)'; // Position it to the left before sliding in
-
-                    setTimeout(() => {
-                        modalImg.style.transition = 'transform 0.4s ease-in, opacity 0.4s ease-in';
-                        modalImg.style.transform = 'translateX(0)';
-                        modalImg.style.opacity = '1';
-                    }, 50);
-                }, 400);
+<script>
+    // 🔹 Initialize Swiper
+    const swiper = new Swiper('.swiper', {
+        autoplay: {
+            delay: 2000,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return `<img src="${document.querySelectorAll('.swiper-img')[index].src}" class="${className} swiper-pagination-thumbnail"/>`;
             }
         }
+    });
 
-        // Attach click event to each Swiper image
-        images.forEach((img, index) => {
-            img.addEventListener('click', function () {
-                openModal(index);
-            });
+    // Modal elements
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = modal.querySelector('.swiper-button-prev');
+    const nextBtn = modal.querySelector('.swiper-button-next');
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.swiper-img');
+
+    // Function to open modal and display the clicked image
+    function openModal(index) {
+        currentIndex = index;
+        modalImg.src = images[currentIndex].src;
+        modal.style.display = 'flex';
+        document.body.style.overflowY = "hidden";
+    }
+
+    // Function to smoothly transition images
+    function slideImage(direction) {
+        // Apply initial transition styles
+        modalImg.style.transition = 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out';
+
+        if (direction === 1) {
+            // Move current image to the left
+            modalImg.style.transform = 'translateX(-100%)';
+            modalImg.style.opacity = '0';
+
+            setTimeout(() => {
+                // Load next image and reset transition
+                currentIndex = (currentIndex + 1) % images.length;
+                modalImg.src = images[currentIndex].src;
+                modalImg.style.transition = 'none'; // Reset transition to avoid flicker
+                modalImg.style.transform = 'translateX(100%)'; // Position it to the right before sliding in
+
+                setTimeout(() => {
+                    modalImg.style.transition = 'transform 0.4s ease-in, opacity 0.4s ease-in';
+                    modalImg.style.transform = 'translateX(0)';
+                    modalImg.style.opacity = '1';
+                }, 50);
+            }, 400);
+        } else {
+            // Move current image to the right
+            modalImg.style.transform = 'translateX(100%)';
+            modalImg.style.opacity = '0';
+
+            setTimeout(() => {
+                // Load previous image and reset transition
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                modalImg.src = images[currentIndex].src;
+                modalImg.style.transition = 'none';
+                modalImg.style.transform = 'translateX(-100%)'; // Position it to the left before sliding in
+
+                setTimeout(() => {
+                    modalImg.style.transition = 'transform 0.4s ease-in, opacity 0.4s ease-in';
+                    modalImg.style.transform = 'translateX(0)';
+                    modalImg.style.opacity = '1';
+                }, 50);
+            }, 400);
+        }
+    }
+
+    // Attach click event to each Swiper image
+    images.forEach((img, index) => {
+        img.addEventListener('click', function () {
+            openModal(index);
+        });
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+        document.body.style.overflowY = "auto"
+    });
+
+    // Next & Prev button functionality inside modal
+    nextBtn.addEventListener('click', function () {
+        slideImage(1);
+    });
+
+    prevBtn.addEventListener('click', function () {
+        slideImage(-1);
+    });
+
+
+    // 🔹 Ensure active pagination thumbnail is highlighted
+    swiper.on('slideChange', function () {
+        const activeIndex = swiper.activeIndex;
+        const bullets = document.querySelectorAll('.swiper-pagination-thumbnail');
+        const paginationContainer = document.querySelector('.swiper-pagination');
+
+        bullets.forEach((bullet, index) => {
+            bullet.style.opacity = index === activeIndex ? '1' : '0.6';
         });
 
-        // Close modal
-        closeBtn.addEventListener('click', function () {
-            modal.style.display = 'none';
+        if (bullets[activeIndex]) {
+            const offset = bullets[activeIndex].offsetLeft - paginationContainer.offsetWidth / 2 + bullets[activeIndex].offsetWidth / 2;
+            paginationContainer.scrollLeft = offset;
+        }
+    });
+
+    // Initialize opacity for first bullet
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.swiper-pagination-thumbnail').forEach((bullet, index) => {
+            bullet.style.opacity = index === 0 ? '1' : '0.5';
         });
-
-        // Next & Prev button functionality inside modal
-        nextBtn.addEventListener('click', function () {
-            slideImage(1);
-        });
-
-        prevBtn.addEventListener('click', function () {
-            slideImage(-1);
-        });
-
-
-        // 🔹 Ensure active pagination thumbnail is highlighted
-        swiper.on('slideChange', function () {
-            const activeIndex = swiper.activeIndex;
-            const bullets = document.querySelectorAll('.swiper-pagination-thumbnail');
-            const paginationContainer = document.querySelector('.swiper-pagination');
-
-            bullets.forEach((bullet, index) => {
-                bullet.style.opacity = index === activeIndex ? '1' : '0.6';
-            });
-
-            if (bullets[activeIndex]) {
-                const offset = bullets[activeIndex].offsetLeft - paginationContainer.offsetWidth / 2 + bullets[activeIndex].offsetWidth / 2;
-                paginationContainer.scrollLeft = offset;
-            }
-        });
-
-        // Initialize opacity for first bullet
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.swiper-pagination-thumbnail').forEach((bullet, index) => {
-                bullet.style.opacity = index === 0 ? '1' : '0.5';
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 
 </html>
