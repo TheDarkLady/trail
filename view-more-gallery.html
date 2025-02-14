@@ -25,10 +25,14 @@
         }
 
         .gallery-grid-img img {
-            width: 570px;
-            height: 380px;
             object-fit: cover;
             cursor: pointer;
+        }
+
+        .gallery-grid-img img:hover {
+            filter: none;
+            transition: filter 0.5s, transform 0.5s;
+            transform: scale3d(1.05, 1.05, 1.05);
         }
 
         .view-more-btn-container {
@@ -48,8 +52,8 @@
         /* Modal Styles */
         .modal-gallery {
             display: none;
-            position: fixed;
-            z-index: 1000;
+            position: fixed !important;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
@@ -79,11 +83,21 @@
             height: auto;
         }
 
-        .swiper-slide img {
+        .modal-gallery .swiper-container .swiper-wrapper .swiper-slide img {
             max-width: 100%;
-            max-height: 90vh;
+            max-height: 80vh;
             display: block;
             margin: auto;
+        }
+        @media only screen and (max-width:976px) and (min-width:768px){
+            #gallery-grid{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media only screen and (max-width:767px){
+            #gallery-grid{
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -141,9 +155,9 @@
 
         const modalGallery = document.getElementById("imageModal-gallery");
         const closeModalGallery = document.querySelector(".close-gallery");
-        const swiperWrapper = document.querySelector(".swiper-wrapper");
+        const swiperWrapper = document.querySelector(".modal-gallery .swiper-container .swiper-wrapper");
 
-        let swiper; // Declare swiper instance
+        let swiperGallery; // Declare swiper instance
 
         // Function to open modal and update Swiper
         document.querySelectorAll(".gallery-grid-img img").forEach((img, index, allImages) => {
@@ -156,13 +170,13 @@
                     slide.innerHTML = `<img src="${image.src}" alt="">`;
                     swiperWrapper.appendChild(slide);
                 });
-
+                document.body.style.overflowY = "hidden"
                 modalGallery.style.display = "flex"; // Show modal
 
                 setTimeout(() => {
-                    if (swiper) swiper.destroy(true, true); // Destroy previous instance if exists
+                    if (swiperGallery) swiperGallery.destroy(true, true); // Destroy previous instance if exists
 
-                    swiper = new Swiper('.swiper-container', {
+                    swiperGallery = new Swiper('.modal-gallery .swiper-container', {
                         navigation: {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
@@ -170,7 +184,7 @@
                         loop: true,
                     });
 
-                    swiper.slideTo(index, 0); // Start with the clicked image
+                    swiperGallery.slideTo(index, 0); // Start with the clicked image
                 }, 100);
             });
         });
@@ -178,6 +192,7 @@
         // Close modal functionality
         closeModalGallery.addEventListener("click", function () {
             modalGallery.style.display = "none";
+            document.body.style.overflowY = "auto"
         });
 
     </script>
