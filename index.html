@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .section {
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Parallax Effect */
+        .parallax {
+            background-image: url('http://novelinvestments.in/wp-content/uploads/2025/01/now.webp.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Section 2 and Section 4 with background color */
+        .bg-color {
+            background-color: #f0f0f0;
+            /* Choose any background color you like */
+        }
+
+        /* Custom Styling for each section */
+        #section1 {
+            /* Additional styles for Section 1 if needed */
+        }
+
+        #section2 {
+            background-color: #ffcccb;
+            /* Light pink for Section 2 */
+        }
+
+        #section3 {
+            /* Additional styles for Section 3 if needed */
+        }
+
+        #section4 {
+            background-color: #e0f7fa;
+            /* Light blue for Section 4 */
+        }
+    </style>
+</head>
+
+<body>
+
+   
+  <div class="section parallax" id="section1"></div>
+  <div class="section bg-color" id="section2"></div>
+  <div class="section parallax" id="section3"></div>
+  <div class="section bg-color" id="section4"></div>
+</body>
+
+</html>
