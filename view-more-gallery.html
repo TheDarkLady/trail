@@ -25,6 +25,8 @@
         }
 
         .gallery-grid-img img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             cursor: pointer;
         }
@@ -105,33 +107,7 @@
 <body>
     <div class="gallery-grid-container">
         <div id="gallery-grid">
-            <div class="gallery-grid-img">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomacfloor.webp" alt="">
-            </div>
-            <div class="gallery-grid-img">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac16floorplan.webp" alt="">
-            </div>
-            <div class="gallery-grid-img">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac25floorplan.webp" alt="">
-            </div>
-            <div class="gallery-grid-img hide">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac1f1.webp" alt="">
-            </div>
-            <div class="gallery-grid-img hide">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac1f2.webp" alt="">
-            </div>
-            <div class="gallery-grid-img hide">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac1f3.webp" alt="">
-            </div>
-            <div class="gallery-grid-img hide">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac2f2.webp" alt="">
-            </div>
-            <div class="gallery-grid-img hide">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac2f1.webp" alt="">
-            </div>
-            <div class="gallery-grid-img hide">
-                <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac2f3.webp" alt="">
-            </div>
+           
         </div>
         <div class="view-more-btn-container">
             <button id="view-more-gallery-btn"> View All Images</button>
@@ -148,11 +124,37 @@
     </div>
 
     <script>
+        const galleryImages = [
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomacfloor.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac16floorplan.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac25floorplan.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac1f1.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac1f2.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac1f3.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac2f2.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac2f1.webp",
+            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/potomac2f3.webp"
+        ]
+
+        const galleryGrid = document.getElementById("gallery-grid");
+        galleryImages.forEach((image) => {
+            const galleryImageContainer = document.createElement('div');
+            galleryImageContainer.classList.add('gallery-grid-img')
+            galleryImageContainer.innerHTML = `<img src="${image}" alt=""/>`
+            galleryGrid.appendChild(galleryImageContainer)
+        })
+
+        
+        const galleryImageContainer = document.querySelectorAll('.gallery-grid-img')
+        for(let i=3; i<galleryImageContainer.length; i++){
+            galleryImageContainer[i].classList.add('hide')
+            
+        }
+
         document.getElementById("view-more-gallery-btn").addEventListener("click", function () {
             document.querySelectorAll(".gallery-grid-img.hide").forEach(img => img.classList.remove("hide"));
             this.style.display = "none";
         });
-
         const modalGallery = document.getElementById("imageModal-gallery");
         const closeModalGallery = document.querySelector(".close-gallery");
         const swiperWrapper = document.querySelector(".modal-gallery .swiper-container .swiper-wrapper");
