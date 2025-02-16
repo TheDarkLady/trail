@@ -174,54 +174,7 @@
     <div class="main-container">
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/1Potomac16Card.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/2.Potomac16frontlow.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/3.Potomac16Leftside.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/4.Potomac16poolrender.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/livingv1.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Kitchenr1.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Powder-v1.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Officev1.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbed-scaled.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbathv1-scaled.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbathv2-scaled.webp"
-                        alt="" class="swiper-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://novelsignaturehomes.com/wp-content/uploads/2025/01/herwic.webp"
-                        alt="" class="swiper-img">
-                </div>
+                
             </div>
 
             <div class="swiper-pagination z-20"></div>
@@ -237,6 +190,37 @@
 </div>
 
 <script>
+
+    const imagesArray = [
+                            'https://novelsignaturehomes.com/wp-content/uploads/2025/01/1Potomac16Card.webp', 
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/2.Potomac16frontlow.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/3.Potomac16Leftside.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/4.Potomac16poolrender.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/livingv1.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/Kitchenr1.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/Powder-v1.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/Officev1.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbed-scaled.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbathv1-scaled.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/Masterbathv2-scaled.webp",
+                            "https://novelsignaturehomes.com/wp-content/uploads/2025/01/herwic.webp"
+                            
+                        ]
+
+    const carouselSwiperWrapper = document.querySelector(".main-container .swiper .swiper-wrapper");
+    imagesArray.forEach((image) => {
+        console.log(image);
+        
+        const carouselSwiperSlide = document.createElement('div');
+        carouselSwiperSlide.classList.add('swiper-slide');
+        const swiperSlideImage = document.createElement('img')
+        swiperSlideImage.src = image;
+        swiperSlideImage.classList.add('swiper-img')
+        carouselSwiperSlide.appendChild(swiperSlideImage)
+        carouselSwiperWrapper.appendChild(carouselSwiperSlide)
+    })
+
+
     // 🔹 Initialize Swiper
     const swiper = new Swiper('.swiper', {
         autoplay: {
