@@ -46,9 +46,13 @@
             margin-top: 20px;
         }
 
-        #view-more-gallery-btn {
+        #view-more-gallery-btn,  #view-less-gallery-btn{
             padding: 14px 28px;
             cursor: pointer;
+        }
+
+        #view-less-gallery-btn{
+            display: none;
         }
 
         /* Modal Styles */
@@ -110,7 +114,8 @@
            
         </div>
         <div class="view-more-btn-container">
-            <button id="view-more-gallery-btn"> View All Images</button>
+            <button id="view-more-gallery-btn"> View More</button>
+            <button id="view-less-gallery-btn"> View Less</button>
         </div>
     </div>
 
@@ -151,9 +156,22 @@
             
         }
 
-        document.getElementById("view-more-gallery-btn").addEventListener("click", function () {
-            document.querySelectorAll(".gallery-grid-img.hide").forEach(img => img.classList.remove("hide"));
+        document.getElementById("view-less-gallery-btn").addEventListener("click", function(){
+            const galleryImageContainer = document.querySelectorAll('.gallery-grid-img')
+            const viewMoreBtn = document.getElementById("view-more-gallery-btn")
+            const images = document.querySelectorAll(".gallery-grid-img")
+            console.log(images.length);
+            for(let i = 3 ; i< images.length ; i++){
+                galleryImageContainer[i].classList.add('hide')
+            }
             this.style.display = "none";
+            viewMoreBtn.style.display = "block"
+        })
+        document.getElementById("view-more-gallery-btn").addEventListener("click", function () {
+            document.querySelectorAll(".gallery-grid-img").forEach(img => img.classList.remove("hide"));
+            const viewLessBtn = document.getElementById("view-less-gallery-btn")
+            this.style.display = "none";
+            viewLessBtn.style.display = "block"
         });
         const modalGallery = document.getElementById("imageModal-gallery");
         const closeModalGallery = document.querySelector(".close-gallery");
